@@ -54,7 +54,7 @@ $Foswiki::cfg{PiwikPlugin}{TrackedActions} = 'edit,view,save';
 
 # **STRING**
 # Regular expression matched against the web.topic being tracked. A matching topic won't be recorded to Piwik.
-$Foswiki::cfg{PiwikPlugin}{ExcludePattern} = '';
+$Foswiki::cfg{PiwikPlugin}{ExcludePattern} = 'WebAtom|WebRss';
 
 # **BOOLEAN**
 # Boolean flag to trigger tracking of outgoing links and downloads

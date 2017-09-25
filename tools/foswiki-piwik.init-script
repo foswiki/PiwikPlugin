@@ -11,19 +11,20 @@
 ### END INIT INFO
 
 DESC="Foswiki-to-Piwik backend server"
-NAME=piwik_daemon
+NAME=foswiki-piwik
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 USER=www-data
-GRPOUP=www-data
+GROUP=www-data
 
 FOSWIKI_PIWIK_PIDFILE=/var/run/$NAME.pid
 FOSWIKI_ROOT=/var/www/foswiki
 FOSWIKI_PIWIK_LOGS=/var/log/$NAME.log
+ENABLED=0
 
 # Include defaults if available
-if [ -f /etc/default/foswiki-piwik ] ; then
-    . /etc/default/foswiki-piwik
+if [ -f /etc/default/$NAME ] ; then
+    . /etc/default/$NAME
 fi
 
 FOSWIKI_PIWIK_QUEUE=$FOSWIKI_ROOT/working/work_areas/PiwikPlugin/queue
@@ -31,6 +32,7 @@ FOSWIKI_PIWIK_DAEMON=$FOSWIKI_ROOT/tools/piwik_daemon
 FOSWIKI_PIWIK_DAEMON_OPTS="-detach -pid $FOSWIKI_PIWIK_PIDFILE -log $FOSWIKI_PIWIK_LOGS"
 
 start() {
+	check_enabled
         log_daemon_msg "Starting $DESC" $NAME
 	if test ! -f $FOSWIKI_PIWIK_LOGS; then
 	  :> $FOSWIKI_PIWIK_LOGS
@@ -88,6 +90,13 @@ reload() {
 
 status() {
 	status_of_proc -p "$FOSWIKI_PIWIK_PID" "$FOSWIKI_PIWIK_DAEMON" $NAME 
+}
+
+check_enabled() {
+    if [ "$ENABLED" = "0" ]; then
+	echo "$DESC: disabled, see /etc/default/foswiki-piwik"
+	exit 0
+    fi
 }
 
 . /lib/lsb/init-functions

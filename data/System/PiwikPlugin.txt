@@ -1,6 +1,6 @@
 %META:TOPICINFO{author="ProjectContributor" comment="" date="1418745265" format="1.1" version="1"}%
 ---+!! %TOPIC%
-%SHORTDESCRIPTION%
+%FORMFIELD{"Description"}%
 
 %TOC%
 
@@ -103,17 +103,12 @@ To track rendering times on older Foswikis you need to apply below patch
 </verbatim>
 %ENDTWISTY%
 
----++ Info
-<!--
-   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
--->
+---++ Dependencies
+%$DEPENDENCIES%
 
-|  Author(s): | Michael Daum|
-|  Copyright: | &copy; 2013-2014 Michael Daum http://michaeldaumconsulting.com |
-|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
-|  Version: | %$VERSION% |
-|  Release: | %$RELEASE% |
-|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+---++ Change History
+%TABLE{columnwidths="7em" tablewidth="100%"}%
+|  25 Sep 2017 | fixed broken init scripts for piwik_daemon script |
 |  16 Dec 2014 | ignore ssl certificate problems when contacting piwik on localhost |
 |  05 Dec 2014 | use both either completePageHander or modifyHeaderHandler not to miss a page view |
 |  29 Aug 2014 | added proper system init scripts; fully specify rest security |
@@ -123,8 +118,16 @@ To track rendering times on older Foswikis you need to apply below patch
 |  16 Jul 2013 | added auto-start feature for the piwik comm server |
 |  15 Jul 2013 | implemented queue manager for better tracking performance; improved control over pages and actions being tracked |
 |  14 Jul 2013 | initial release |
-|  Dependencies: | %$DEPENDENCIES% |
-|  Home page: | Foswiki:Extensions/%TOPIC% |
-|  Support: | Foswiki:Support/%TOPIC% |
+
 
 %META:FILEATTACHMENT{name="logo.png" attachment="logo.png" attr="h" comment="" date="1418745265" size="7191" user="ProjectContributor" version="1"}%
+%META:FORM{name="PackageForm"}%
+%META:FIELD{name="Author" title="Author" value="Michael Daum"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2014 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
+%META:FIELD{name="Home" title="Home" value="Foswiki:Extensions/%TOPIC%"}%
+%META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
+%META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
+%META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/%TOPIC%"}%
+%META:FIELD{name="Support" title="Support" value="Foswiki:Support/%TOPIC%"}%
+%META:FIELD{name="Version" title="Version" value="%$VERSION%"}%

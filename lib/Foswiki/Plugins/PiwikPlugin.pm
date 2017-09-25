@@ -1,6 +1,6 @@
-# Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
+# Plugin for Foswiki - The Free and Open Source Wiki, https://foswiki.org/
 #
-# PiwikPlugin is Copyright (C) 2013-2014 Michael Daum http://michaeldaumconsulting.com
+# PiwikPlugin is Copyright (C) 2013-2017 Michael Daum https://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -22,8 +22,8 @@ use Foswiki::Func ();
 use Foswiki::Sandbox ();
 use Error qw(:try);
 
-our $VERSION = '2.22';
-our $RELEASE = '2.22';
+our $VERSION = '2.30';
+our $RELEASE = '25 Sep 2017';
 our $SHORTDESCRIPTION = 'Server-side page tracking using Piwik';
 our $NO_PREFS_IN_TOPIC = 1;
 our $tracker;

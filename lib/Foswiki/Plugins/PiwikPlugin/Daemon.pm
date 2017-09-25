@@ -1,6 +1,6 @@
-# Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
+# Plugin for Foswiki - The Free and Open Source Wiki, https://foswiki.org/
 #
-# PiwikPlugin is Copyright (C) 2013-2014 Michael Daum http://michaeldaumconsulting.com
+# PiwikPlugin is Copyright (C) 2013-2017 Michael Daum https://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -70,6 +70,7 @@ sub userAgent {
 
     $this->{userAgent}->ssl_opts(
       verify_hostname => 0,    # SMELL
+      verify_mode => 0,    # SMELL
     );
   }
 
