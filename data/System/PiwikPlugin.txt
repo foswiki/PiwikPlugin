@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1418745265" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1527514611" format="1.1" version="1"}%
 ---+!! %TOPIC%
 %FORMFIELD{"Description"}%
 
@@ -108,6 +108,7 @@ To track rendering times on older Foswikis you need to apply below patch
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  28 May 2018 | removed local implementation of !TopicTitle and use Foswiki:Extensions/TopicTitlePlugin now |
 |  25 Sep 2017 | fixed broken init scripts for piwik_daemon script |
 |  16 Dec 2014 | ignore ssl certificate problems when contacting piwik on localhost |
 |  05 Dec 2014 | use both either completePageHander or modifyHeaderHandler not to miss a page view |
@@ -120,10 +121,10 @@ To track rendering times on older Foswikis you need to apply below patch
 |  14 Jul 2013 | initial release |
 
 
-%META:FILEATTACHMENT{name="logo.png" attachment="logo.png" attr="h" comment="" date="1418745265" size="7191" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="logo.png" attachment="logo.png" attr="h" comment="" date="1527514611" size="7191" user="ProjectContributor" version="1"}%
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2014 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2013-2018 Michael Daum http://michaeldaumconsulting.com"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Home" title="Home" value="Foswiki:Extensions/%TOPIC%"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%

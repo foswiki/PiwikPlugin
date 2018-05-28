@@ -3,3 +3,5 @@ Digest::MD5,>=2.33,cpan,Required.
 URI,>=1.59,cpan,Required.
 JSON,>=2.53,cpan,Required.
 Filesys::Notify::Simple,>0,cpan,Required.
+ONLYIF ( $Foswiki::Plugins::VERSION < 2.6)
+Foswiki::Plugins::TopicTitlePlugin,>1.00,perl,Required for Foswiki < 2.2

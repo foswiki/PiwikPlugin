@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, https://foswiki.org/
 #
-# PiwikPlugin is Copyright (C) 2013-2017 Michael Daum https://michaeldaumconsulting.com
+# PiwikPlugin is Copyright (C) 2013-2018 Michael Daum https://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

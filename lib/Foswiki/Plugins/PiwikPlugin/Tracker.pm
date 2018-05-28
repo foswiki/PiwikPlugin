@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, https://foswiki.org/
 #
-# PiwikPlugin is Copyright (C) 2013-2017 Michael Daum https://michaeldaumconsulting.com
+# PiwikPlugin is Copyright (C) 2013-2018 Michael Daum https://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -155,9 +155,9 @@ sub doTrackPageView {
 
   writeDebug("doTrackPageView($web, $topic)");
 
-  my $webTitle = getTopicTitle($web, $Foswiki::cfg{HomeTopicName});
+  my $webTitle = Foswiki::Func::getTopicTitle($web, $Foswiki::cfg{HomeTopicName});
   $webTitle = $web if $webTitle eq $Foswiki::cfg{HomeTopicName};
-  my $topicTitle = $topic eq $Foswiki::cfg{HomeTopicName} ? $topic : getTopicTitle($web, $topic);
+  my $topicTitle = $topic eq $Foswiki::cfg{HomeTopicName} ? $topic : Foswiki::Func::getTopicTitle($web, $topic);
   my $pageTitle = $webTitle . '/' . $topicTitle;
 
   return $this->queueRecord($this->createPageViewRecord($pageTitle));
@@ -377,29 +377,6 @@ sub queueRecord {
 ################################################################################
 sub writeDebug {
   print STDERR "PiwikPlugin::Tracker - $_[0]\n" if $Foswiki::cfg{PiwikPlugin}{Debug};
-}
-
-################################################################################
-sub getTopicTitle {
-  my ($web, $topic) = @_;
-
-  my $topicTitle;
-
-  my ($meta, $text) = Foswiki::Func::readTopic($web, $topic);
-
-  my $field = $meta->get('FIELD', 'TopicTitle');
-  if ($field) {
-    $topicTitle = $field->{value};
-    return $topicTitle if $topicTitle;
-  }
-
-  $field = $meta->get('PREFERENCE', 'TOPICTITLE');
-  if ($field) {
-    $topicTitle = $field->{value};
-    return $topicTitle if $topicTitle;
-  }
-
-  return $topic;
 }
 
 ################################################################################
